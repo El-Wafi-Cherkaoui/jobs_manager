@@ -1,0 +1,18 @@
+@props([
+    "size" => "mini"
+])
+@php
+    $classes = 'w-fit bg-dshadow rounded-lg transition-all cursor-pointer hover:bg-dshadow/80';
+    if($size == 'mini'){
+        $classes = $classes . ' py-1 px-2 text-xs text-dwhite';
+    }
+    else if($size == 'corner'){
+        $classes = $classes . ' bg-dwhite text-dblack border-2 border-opacity-50 shadow-cornerShadow border-dblack px-1 py-1/2 text-xs hover:text-dwhite';
+    }
+    else{
+        $classes = $classes . ' py-1 px-3 text-sm text-dwhite';
+    }
+@endphp
+<a class="{{$classes}}" href="#">
+{{$slot}}
+</a>
