@@ -33,7 +33,7 @@
             <li>Salaries</li>
         </ul>
         <div>
-            <a href="#">Add Job</a>
+            <x-btn href="#">Add Job</x-btn>
         </div>
     </nav>
     <main class="max-w-[986px] m-auto p-5 space-y-4">

@@ -1,4 +1,10 @@
 <x-layout title="Jobs Management">
+    <section class="flex flex-col justify-center items-center gap-5 p-5">
+        <h1 class="text-4xl text-center text-dwhite">Find Job</h1>
+        <form action="" method="post" class="w-full flex flex-col justify-center items-center gap-2">
+            <input class="py-2 px-4 w-2/3 rounded-xl focus:rounded-2xl focus:outline-none border-4 transition-all duration-300 focus:border-dorange" type="search" placeholder="e-commerce project..." class="">
+        </form>
+    </section>
     <section>
         <x-header>Top Jobs :</x-header>
         <div class="grid lg:grid-cols-3 gap-5 mt-5">
@@ -9,7 +15,7 @@
     </section>
 
     <section>
-        <x-header>Find Jobs :</x-header>
+        <x-header>Recent Jobs :</x-header>
         <div class="mt-5 space-y-5">
             <x-job_card_expand></x-job_card_expand>
             <x-job_card_expand></x-job_card_expand>
