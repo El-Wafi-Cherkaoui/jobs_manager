@@ -2,7 +2,7 @@
     <section class="flex flex-col justify-center items-center gap-5 p-5">
         <h1 class="text-4xl text-center text-dwhite">Find Job</h1>
         <form action="" method="post" class="w-full flex flex-col justify-center items-center gap-2">
-            <input class="py-2 px-4 w-2/3 rounded-xl focus:rounded-2xl focus:outline-none border-4 transition-all duration-300 focus:border-dorange" type="search" placeholder="e-commerce project..." class="">
+            <input class="py-2 px-4 w-full max-w-xl rounded-xl focus:rounded-2xl focus:outline-none border-4 transition-all duration-300 focus:border-dorange" type="search" placeholder="e-commerce project..." class="">
         </form>
     </section>
     <section>
@@ -26,9 +26,9 @@
     <section>
         <x-header>Tags :</x-header>
         <div class="space-x-1 mt-5">
-            <x-tag>Tag#1</x-tag>
-            <x-tag>Tag#2</x-tag>
-            <x-tag>Tag#3</x-tag>
+            <x-tag size="large">Tag#1</x-tag>
+            <x-tag size="large">Tag#2</x-tag>
+            <x-tag size="large">Tag#3</x-tag>
         </div>
     </section>
 </x-layout>

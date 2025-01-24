@@ -1,11 +1,11 @@
-<div class="bg-dwhite p-4 flex gap-2 rounded-lg">
+<div class="bg-dwhite p-4 flex gap-2 rounded-lg group cursor-pointer border-1 border-transparent hover:border-dorange hover:shadow-borderShadow transition-all duration-300 ease-in-out">
 
     <x-emp_logo></x-emp_logo>
 
     <div class="flex flex-col">
         <h5 class="opacity-80 text-sm">Dev 201</h5>
         <div class="h-full flex flex-col">
-            <h3 class="font-bold text-3xl mb-5">Full Stack Project</h3>
+            <h3 class="font-bold text-3xl mb-5 group-hover:text-dorange transition-all duration-300">Full Stack Project</h3>
             <p class="opacity-80 mt-auto text-sm">Final Project : 4500DH</p>
         </div>
     </div>
