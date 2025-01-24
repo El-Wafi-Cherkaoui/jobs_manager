@@ -1,3 +1,4 @@
+@props(["tags"])
 <x-layout title="Jobs Management">
     <section class="flex flex-col justify-center items-center gap-5 p-5">
         <h1 class="text-4xl text-center text-dwhite">Find Job</h1>
@@ -26,9 +27,9 @@
     <section>
         <x-header>Tags :</x-header>
         <div class="space-x-1 mt-5">
-            <x-tag size="large">Tag#1</x-tag>
-            <x-tag size="large">Tag#2</x-tag>
-            <x-tag size="large">Tag#3</x-tag>
+            @foreach ($tags as $tag)
+                <x-tag size="large" tag={{$tag}} />
+            @endforeach
         </div>
     </section>
 </x-layout>

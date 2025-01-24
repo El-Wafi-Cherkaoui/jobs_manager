@@ -1,5 +1,6 @@
 @props([
-    "size" => "mini"
+    "size" => "mini",
+    "tag" => ""
 ])
 @php
     $classes = 'w-fit bg-dshadow rounded-lg transition-all cursor-pointer hover:bg-dshadow/80';
@@ -17,5 +18,5 @@
     }
 @endphp
 <a class="{{$classes}}" href="#">
-{{$slot}}
+{{$tag}}
 </a>
