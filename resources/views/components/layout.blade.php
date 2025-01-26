@@ -24,17 +24,25 @@
     @endif
 </head>
 <body class="bg-dblack">
-    <nav class="flex justify-between items-center h-fit px-10 py-2 bg-dwhite shadow-navShadow mb-5 font-bold color-dblack">
+    <nav class="flex sm:flex-row flex-col gap-3 justify-between items-center h-fit px-10 py-2 bg-dwhite shadow-navShadow mb-5 font-bold color-dblack">
         <img src={{Vite::asset('resources/images/logo.png')}} class="w-20" alt="">
-        <ul class="navbar flex gap-5">
-            <li>Home</li>
-            <li>Jobs</li>
-            <li>Employees</li>
-            <li>Salaries</li>
+        <ul class="navbar flex sm:flex-row flex-col text-center gap-5">
+            <x-btn :normal="true" href="/">Home</x-btn>
+            <x-btn :normal="true" href="/">Jobs</x-btn>
+            <x-btn :normal="true" href="/">Employees</x-btn>
+            <x-btn :normal="true" href="/">Salaries</x-btn>
         </ul>
-        <div>
-            <x-btn href="#">Add Job</x-btn>
-        </div>
+        @auth
+            <div>
+                <x-btn href="/jobs/create" >Add Job</x-btn>
+            </div>
+        @endauth
+        @guest
+            <div>
+                <x-btn :normal="true" href="/login">Login</x-btn>
+                <x-btn :filled="true" href="/register">Register</x-btn>
+            </div>
+        @endguest
     </nav>
     <main class="max-w-[986px] m-auto p-5 space-y-4">
         {{$slot}}
