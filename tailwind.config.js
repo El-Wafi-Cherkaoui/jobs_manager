@@ -17,11 +17,11 @@ export default {
                 dblack: "#343131",
                 dshadow: "#343131",
                 dwhite: "#EEEEEE",
-                dorange: "#D8A25E"
+                dorange: "#d8a25e"
             },
             boxShadow: {
                 navShadow: '0vw 1vh .5vh #393E46',
-                borderShadow: '0vw 1vh .1vh #D8A25E',
+                // borderShadow: '0vw 1vh .1vh #D8A25E',
                 cornerShadow: '0vw .5vh .1vh #D8A25E',
             }
         },

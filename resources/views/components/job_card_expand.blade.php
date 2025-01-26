@@ -1,7 +1,8 @@
 @props(["job"])
 <div class="bg-dwhite p-4 sm:flex gap-2 rounded-lg group cursor-pointer border-1 border-transparent hover:border-dorange hover:shadow-borderShadow transition-all duration-300 ease-in-out">
 
-    <x-emp_logo :expand="true" />
+    <x-emp_logo :expand="true" src="storage/{{$job->employer->logo}}" />
+
 
     <div class="flex flex-col text-center sm:text-left">
         <h5 class="opacity-80 text-sm h-fit">{{$job->employer->name}}</h5>

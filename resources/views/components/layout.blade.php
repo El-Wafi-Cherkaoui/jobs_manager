@@ -33,8 +33,13 @@
             <x-btn :normal="true" href="/">Salaries</x-btn>
         </ul>
         @auth
-            <div>
+            <div class="flex items-center gap-2">
                 <x-btn href="/jobs/create" >Add Job</x-btn>
+                <form action="/logout" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="hover:text-dorange">Log out</button>
+                </form>
             </div>
         @endauth
         @guest

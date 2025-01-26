@@ -6,6 +6,10 @@ use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
 use App\Models\Job;
 use App\Models\Tag;
+use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class JobController extends Controller
 {
@@ -20,20 +24,30 @@ class JobController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('jobs.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreJobRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validated_data = $request->validate([
+            'title' => ['required'],
+            'salary' => ['required'],
+            'location' => ['required'],
+            'schedule' => ['required', Rule::in(['Part Time', 'Full Time'])],
+            'url' => ['required', 'active_url'],
+            'tags' => ['nullable'],
+        ]);
+        $validated_data['vip'] = $request->has('vip');
+        $new_job = Auth::user()->employer->jobs()->create(Arr::except($validated_data, 'tags'));
+
+        if($validated_data['tags']){
+            foreach (explode(',', $validated_data['tags']) as $tag) {
+                $new_job->add_tag($tag);
+            }
+        }
+        return redirect('/');
     }
 
     /**

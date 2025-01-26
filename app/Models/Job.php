@@ -12,6 +12,7 @@ class Job extends Model
 {
     /** @use HasFactory<\Database\Factories\JobFactory> */
     use HasFactory;
+    protected $guarded = [];
 
     public function employer():BelongsTo{
         return $this->belongsTo(Employer::class);

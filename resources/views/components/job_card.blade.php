@@ -11,7 +11,7 @@
                 <x-tag_comp :$tag/>
             @endforeach
         </div>
-        <x-emp_logo width="42"></x-emp_logo>
+        <x-emp_logo src="storage/{{$job->employer->logo}}" width="42"></x-emp_logo>
 
     </div>
 </div>
